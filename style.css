@@ -1,0 +1,119 @@
+/* Estilos para o corpo (body) da página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #006400; /* Verde escuro */
+    color: #ccc; /* Cor do texto principal */
+}
+
+/* Estilos para o cabeçalho (header) */
+header {
+    background-color: #006400; /* Verde escuro */
+    color: #ccc; /* Cor do texto no cabeçalho */
+    text-align: center;
+    padding: 20px;
+}
+
+/* Estilos para o container principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #006400; /* Verde escuro */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para o título (h1) */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para os parágrafos (p) */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Estilos para a caixa de seleção (select) */
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos para a caixa de resultado */
+#result {
+    display: none;
+    margin-top: 20px;
+}
+
+/* Estilos para os links de solução */
+.solution {
+    font-weight: bold;
+    color: #007bff; /* Cor do link */
+    cursor: pointer;
+}
+
+/* Estilos para o formulário */
+form {
+    margin-top: 30px;
+}
+
+/* Estilos para os rótulos (label) */
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Estilos para campos de texto (input[type="text"]) e área de texto (textarea) */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos para o botão de envio */
+.submit-button {
+    background-color: #007bff; /* Azul */
+    color: #fff; /* Cor do texto no botão */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: pulse 2s infinite; /* Animação de pulsação */
+}
+
+.submit-button:hover {
+    background-color: #0056b3; /* Azul mais escuro */
+}
+
+/* Estilos para o botão do WhatsApp */
+.whatsapp-button {
+    background-color: #25d366; /* Verde do WhatsApp */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Animação de pulsação para o botão de envio */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

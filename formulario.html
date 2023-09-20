@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vita Fibril - Encontre a Solução</title>
+    <link rel="stylesheet" type="text/css" href="style.css"> <!-- Inclusão do arquivo CSS -->
+</head>
+<body>
+    <header>
+        <h1>Encontre a Solução com Vita Fibril</h1>
+    </header>
+    <div class="container">
+        <p>Selecione sua preocupação:</p>
+        <select id="selectOption">
+            <option value="">Escolha uma opção</option>
+            <option value="quedaCabelo">Cabelo caindo</option>
+            <option value="unhasQuebradicas">Unhas quebradiças</option>
+            <option value="peleSemBrilho">Pele sem brilho</option>
+        </select>
+
+        <div id="result">
+            <p>A solução para sua preocupação é:</p>
+            <p id="solutionText" class="solution"></p>
+        </div>
+
+        <form id="contactForm" action="mailto:admin@frivarejo.com" method="post" enctype="text/plain">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
+
+            <label for="whatsapp">Número de WhatsApp:</label>
+            <input type="text" id="whatsapp" name="whatsapp">
+
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <input type="submit" value="Enviar" class="submit-button">
+        </form>
+
+        <button class="whatsapp-button" id="whatsappButton">Chamar no WhatsApp</button>
+    </div>
+
+    <script src="script.js"></script> <!-- Inclusão do arquivo JavaScript -->
+</body>
+</html>
