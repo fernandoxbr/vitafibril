@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vita Fibril - Encontre a Solução</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #006400; /* Verde escuro */
+            color: #ccc; /* Cor do texto principal */
+        }
+
+        header {
+            background-color: #006400; /* Verde escuro */
+            color: #ccc; /* Cor do texto no cabeçalho */
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #006400; /* Verde escuro */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #result {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .solution {
+            font-weight: bold;
+            color: #007bff; /* Cor do link */
+            cursor: pointer;
+        }
+
+        form {
+            margin-top: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-button {
+            background-color: #007bff; /* Azul */
+            color: #fff; /* Cor do texto no botão */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            animation: pulse 2s infinite; /* Animação de pulsação */
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3; /* Azul mais escuro */
+        }
+
+        .whatsapp-button {
+            background-color: #25d366; /* Verde do WhatsApp */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Encontre a Solução com Vita Fibril</h1>
+    </header>
+    <div class="container">
+        <p>Selecione sua preocupação:</p>
+        <select id="selectOption">
+            <option value="">Escolha uma opção</option>
+            <option value="quedaCabelo">Cabelo caindo</option>
+            <option value="unhasQuebradicas">Unhas quebradiças</option>
+            <option value="peleSemBrilho">Pele sem brilho</option>
+        </select>
+
+        <div id="result">
+            <p>A solução para sua preocupação é:</p>
+            <p id="solutionText" class="solution"></p>
+        </div>
+
+        <form id="contactForm" action="mailto:admin@frivarejo.com" method="post" enctype="text/plain">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
+
+            <label for="whatsapp">Número de WhatsApp:</label>
+            <input type="text" id="whatsapp" name="whatsapp">
+
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <input type="submit" value="Enviar" class="submit-button">
+        </form>
+
+        <button class="whatsapp-button" id="whatsappButton">Chamar no WhatsApp</button>
+    </div>
+
+    <script>
+        const selectOption = document.getElementById('selectOption');
+        const result = document.getElementById('result');
+        const solutionText = document.getElementById('solutionText');
+        const whatsappButton = document.getElementById('whatsappButton');
+        const contactForm = document.getElementById('contactForm');
+
+        selectOption.addEventListener('change', function() {
+            const selectedOption = selectOption.value;
+            result.style.display = 'block';
+
+            if (selectedOption === 'quedaCabelo') {
+                solutionText.textContent = 'O Vita Fibril contém componentes como biotina e cisteína que auxiliam na redução da queda de cabelo e no fortalecimento dos fios. Você merece ter cabelos lindos e saudáveis! 😃';
+                solutionText.classList.add('solution');
+                solutionText.classList.remove('solution', 'peleSemBrilho', 'unhasQuebradicas');
+            } else if (selectedOption === 'unhasQuebradicas') {
+                solutionText.textContent = 'O Vita Fibril contém componentes como queratina que auxiliam no fortalecimento das unhas, tornando-as menos quebradiças. Suas unhas podem ser fortes e deslumbrantes! 💅';
+                solutionText.classList.add('solution');
+                solutionText.classList.remove('solution', 'peleSemBrilho', 'quedaCabelo');
+            } else if (selectedOption === 'peleSemBrilho') {
+                solutionText.textContent = 'O Vita Fibril contém componentes como ácido pantotênico que auxiliam na melhoria da saúde da pele, proporcionando um aspecto mais brilhante e saudável. Tenha uma pele radiante! ✨';
+                solutionText.classList.add('solution');
+                solutionText.classList.remove('solution', 'quedaCabelo', 'unhasQuebradicas');
+            } else {
+                solutionText.textContent = '';
+                result.style.display = 'none';
+            }
+        });
+
+        whatsappButton.addEventListener('click', function() {
+            const message = encodeURIComponent(contactForm.message.value);
+            window.location.href = `https://wa.me/5543991171521?text=${message}`;
+        });
+    </script>
+</body>
+</html>
